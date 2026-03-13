@@ -1,143 +1,108 @@
-# Markdown Next AI
+<h1 align="center">Markdown Next AI</h1>
+<p align="center"><b>Your Intelligent Writing Companion for Obsidian.</b></p>
 
-**Markdown Next AI** 是一个深度集成到 Obsidian 的 AI 助手插件。它不仅仅是一个简单的聊天窗口，更是懂你笔记上下文的智能写作伴侣。
+<p align="center">
+  A deeply integrated AI assistant for Obsidian that understands your notes' context.
+</p>
 
-通过强大的上下文感知、灵活的模型管理以及自定义提示词系统，它能帮助你完成从灵感捕捉、内容润色到全文续写的各项任务。
+<p align="center">
+  <a href="https://github.com/CYZice/Markdown-Next-AI/stargazers">
+    <img src="https://img.shields.io/github/stars/CYZice/Markdown-Next-AI?style=flat-square&color=6c5ce7" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/CYZice/Markdown-Next-AI/releases/latest">
+    <img src="https://img.shields.io/github/v/release/CYZice/Markdown-Next-AI?style=flat-square&color=00b894" alt="Latest Release">
+  </a>
+  <a href="https://github.com/CYZice/Markdown-Next-AI/releases">
+    <img src="https://img.shields.io/github/downloads/CYZice/Markdown-Next-AI/total?style=flat-square&color=0984e3" alt="Downloads">
+  </a>
+  <a href="https://github.com/CYZice/Markdown-Next-AI/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/CYZice/Markdown-Next-AI?style=flat-square&color=636e72" alt="License">
+  </a>
+</p>
 
-## 📅 更新日志 (v1.6.1)
+<p align="center">
+  <b>English</b> | <a href="./README_zh-CN.md">简体中文</a>
+</p>
 
-### 🧱 代码重构
-* **核心逻辑重构**：模块拆分与职责收敛，降低耦合，开发者更容易扩展与维护。
+## Highlights
 
-### ⚙️ 设置与快捷键
-* **设置界面模块化**：配置项按功能拆分，查找与调整更直观。
-* **对话/补全快捷键可配置**：对话命令可在 Obsidian「设置 → 快捷键」中自定义；Tab 补全支持在设置中录制/修改按键。
+### ⚡️ Tab Completion
+Experience seamless writing with AI-powered predictive text.
 
-### 🪟 弹窗与交互优化
-* **拖动逻辑优化**：修复弹窗“乱跳”的问题，拖动更稳定。
+| Predictive Ghost Text | Smart Context Awareness |
+|:--:|:--:|
+| ![Tab Completion](./assets/auto_completion.png) | AI predicts your next words based on context, supporting both code and natural language. |
 
-### 🎛️ 模式调整
-* **Ask / Edit / Direct 模式分离**：三种模式行为独立，便于适配不同场景（问答、Diff 修改、直接应用）。
+### 🎯 Context-Aware Chat
+Summon AI anywhere in your vault with a simple `@` trigger.
 
-### 🐛 Bug 修复
-* **@ 与 # 触发修复**：修复上下文选择与提示词选择的相关异常。
+| File & Folder Reference | Multi-mode Interaction |
+|:--:|:--:|
+| ![File Reference](./assets/select_file.png) | ![Chat Context](./assets/chat_context.png) |
+| Reference specific notes or folders as background knowledge for truly contextual conversations. | Switch between **Ask**, **Edit**, and **Direct** modes to fit your workflow. |
 
-> 详细变更请查看 [CHANGELOG.md](CHANGELOG.md)
+### ✨ Smart Selection Toolbar
+Quickly access AI actions by simply selecting text in your editor.
 
----
+| Floating Toolbar | Visual Diff View |
+|:--:|:--:|
+| ![Selection Toolbar](./assets/inline_generation.png) | ![Diff View](./assets/inline_generation.png) |
+| Instant access to "AI Modify" without remembering shortcuts. | Review changes with a clear Diff interface. Accept, reject, or keep both. |
 
-## ✨ 核心特性
+## Features
 
-### 1. ⚡️ Tab 自动补全 (Tab Completion)
-全新的即时文本/代码补全体验，智能预测您的输入，提升写作效率。
+| Feature | Description |
+|---------|-------------|
+| ⌨️ **Tab Completion** | Real-time AI-powered completion for smoother, more natural writing. |
+| 🎯 **Context Chat** | Trigger with `@` to reference vault content and chat with context. |
+| 🪡 **Selection Toolbar** | Floating "✨" icon for instant AI actions on selected text. |
+| 🤖 **Inline Editing** | Polish, translate, or rewrite text with a professional Diff view. |
+| ⚡️ **Quick Commands** | Use `#` to call preset prompts (Summarize, Polish, Translate, etc.). |
+| 🎛️ **Multi-Model Support** | Support for OpenAI, Claude, Gemini, DeepSeek, and custom API endpoints. |
+| 🔐 **Keychain Security** | Securely store your API keys using the system keychain. |
 
-![Tab 自动补全演示](assets/auto_completion.png)
+## Quick Start
 
-- **触发方式**: 在输入过程中，AI 会自动预测后续内容并以灰色虚影显示。
-- **接受建议**: 按下 `Tab` 键即可将建议内容填入文档。
-- **智能感知**: 能够根据上下文自动判断补全内容，无论是代码片段还是自然语言段落。
-- **配置**: 支持自定义触发延迟、上下文长度等参数，满足不同写作习惯。
+1. **Install the plugin**: Follow the [Installation](#installation) guide below.
+2. **Configure API Keys**:
+   - Go to `Settings` -> `Markdown Next AI` -> `Models`.
+   - Add your provider (OpenAI, Anthropic, Gemini, etc.) and enter your API Key.
+   - *Tip: Enable Keychain for secure storage.*
+3. **Start Writing**:
+   - Type `@` to open the context chat.
+   - Type `#` in the chat box to use quick prompts.
+   - Select text to see the ✨ toolbar.
+   - Just type and wait for grey ghost text to see **Tab Completion**.
 
-### 2. 🎯 上下文多模态对话
-- 在文档中输入 `@` 唤出 AI 对话框，支持引用笔记库中的文件或文件夹。AI 会读取引用内容作为背景知识，实现真正的"基于知识库对话"。
-- 弹窗顶部支持切换 **Ask / Edit / Direct** 三种模式，用于问答、Diff 修改与直接应用等不同场景。
+## Installation
 
-![文件引用演示](assets/select_file.png)
+### Manual Installation (Currently Recommended)
 
-- 支持直接粘贴或上传图片，多模态模型可识别图片内容并进行分析、问答和讨论。
+1. Download `main.js`, `manifest.json`, `styles.css`, and `data.json` from the [latest release](https://github.com/CYZice/Markdown-Next-AI/releases).
+2. Create a folder named `markdown-next-ai` in your vault's `.obsidian/plugins/` directory.
+3. Copy the downloaded files into that folder.
+4. Restart Obsidian and enable the plugin in **Settings** -> **Community plugins**.
 
-![上下文引用演示](assets/chat_context.png)
+## Roadmap
 
-### 3. ✨ 选中工具栏 (Selection Toolbar)
-选中编辑器中的文字即可唤出快捷工具栏，常用操作触手可及。
+- [ ] Stronger Vault-wide Semantic Search (RAG)
+- [ ] Support for local LLMs (Ollama/LM Studio) enhancement
+- [ ] More granular selection actions
+- [ ] Mobile support optimization
+- [ ] Custom skill system (SOP encapsulation)
 
-- **快速唤出**: 选中文本后，会出现悬浮的 "✨" 图标，鼠标悬停或点击即可展开菜单。
-- **即时操作**: 提供 "AI Modify" 等快捷操作，无需记忆快捷键。
-- **无缝衔接**: 与 Diff 视图结合，修改内容一目了然。
+## Contributing
 
-### 4. 🤖 沉浸式内联写作与修改
-- **智能续写**: 根据上下文自动续写内容，保持风格一致。
-- **选中文本修改**: 选中任意文本进行润色、翻译或改写。
-- **可视化 Diff 视图**: 引入全新的 Diff 界面，以清晰的差异对比形式展示 AI 的修改建议。支持对变更内容进行 
-- **逐段确认**（接受/拒绝/保留两者），像代码 Review 一样高效处理文本修改。
+Contributions are welcome! Whether it's a bug report, a feature suggestion, or a pull request, we appreciate your help in making Markdown Next AI better.
 
-![智能润色演示](assets/inline_generation.png)
+## Acknowledgments
 
-### 5. ⚡️ 快捷指令系统
-在对话框输入 `#` 快速调用常用提示词（扩写、摘要、润色、翻译等）。支持自定义添加、编辑指令，打造专属写作工作流。
+Special thanks to all the open-source projects and developers in the Obsidian community that inspired this plugin.
 
-![常用提示词演示](assets/usual_prompt.png)
+## Support
 
-![提示词管理](assets/settings_prompt.png)
+If you find Markdown Next AI helpful, please consider giving it a ⭐️ on GitHub!
 
-### 6. 🛠️ 灵活的模型管理
-兼容 OpenAI 格式的任意 API（GPT、Claude、Gemini、DeepSeek 等）。支持添加多个模型配置，自由切换使用。
+## License
 
-![模型配置](assets/settings_model.png)
-
----
-
-## ⚙️ 配置说明
-
-启用插件后，请进入设置页面进行初始化配置。新版设置界面采用标签页设计，分类更加清晰：
-
-### 1. 模型 (Models)
-- **供应商设置**: 
-    - 内置 OpenAI, Anthropic, Gemini, DeepSeek, Ollama 等常用供应商。
-    - 支持 **添加自定义供应商**，兼容所有 OpenAI 格式的 API。
-    - **Keychain 安全存储**: 开启后，API Key 将加密存储在系统钥匙串中，支持在不同供应商间复用 Key。
-- **模型管理**: 
-    - 添加/编辑模型参数，启用/禁用特定模型。
-    - 支持为不同模型指定不同的 Provider。
-
-![Keychain 设置](assets/keychain_settings.png)
-
-### 2. 编辑器 (Editor)
-- **功能开关**:
-    - **启用右键菜单**: 选中文本时显示 AI 处理选项。
-    - **启用 @/& 触发**: 输入 `@` 或 `&` 时自动唤出 AI 对话框。
-- **Diff 视图**: 自定义差异对比界面的显示方式。
-
-### 3. 补全 (Completion)
-- **基础设置**:
-    - **启用 Tab 补全**: 开启/关闭编辑器内的自动补全。
-    - **补全模型**: 建议选择响应速度快的小型模型（如 gpt-4o-mini, haiku 等）。
-    - **触发延迟**: 设置输入停止多久后触发补全。
-- **触发策略**:
-    - **空闲触发**: 光标静止一段时间后自动触发。
-    - **触发器配置**: 自定义触发补全的规则（支持字符串匹配和正则匹配），例如换行时触发、输入特定符号时触发。
-- **高级设置 (Advanced)**:
-    - **系统提示词**: 自定义补全任务的 System Prompt。
-    - **上下文参数**: 调整上下文范围 (Context Range)、最小上下文长度。
-    - **模型参数**: Temperature, Top P, Max Tokens 等微调。
-    - **额外约束**: 为补全结果添加额外的格式或逻辑约束。
-- **Tab 补全快捷键**:
-    - 支持在设置中自定义并“录制按键”：接受建议 / 拒绝建议 / 取消建议 / 手动触发。
-
-### 4. 对话 (Chat)
-- **全局规则 (Global Rules)**: 
-    - 设置适用于所有对话的通用规则（如"始终使用中文"、"保持专业语气"）。
-    - 支持启用/禁用全局规则。
-- **常用提示词 (Prompts)**: 
-    - 管理在对话框中通过 `#` 快速调用的提示词模板。
-    - 支持添加、编辑、删除自定义提示词。
-- **对话快捷键**:
-    - 可在 Obsidian「设置 → 快捷键」中为插件命令（如“唤出AI对话框”）设置/修改快捷键。
-
-### 5. 其他 (Others)
-- **连接测试**: 一键测试当前 API 配置是否连通。
-- **全局参数**:
-    - **请求超时**: 设置 API 请求的全局超时时间。
-    - **最大 Token 数**: 限制 AI 生成文本的最大长度。
-
----
-
-## 📦 安装指南
-
-由于本插件尚未上架 Obsidian 社区插件市场，请按照以下步骤手动安装：
-
-1. 下载本仓库最新 Release 中的 `main.js`, `manifest.json`, `styles.css`, `data.json`。
-2. 打开您的 Obsidian 仓库文件夹，进入 `.obsidian/plugins` 目录。
-3. 创建一个名为 `markdown-next-ai` 的新文件夹。
-4. 将下载的文件放入该文件夹。
-5. 重启 Obsidian，在 **设置** -> **第三方插件** 中启用 "Markdown Next AI"。
+[MIT License](LICENSE)
