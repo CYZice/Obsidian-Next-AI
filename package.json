@@ -1,6 +1,6 @@
 {
     "name": "obsidian-next-ai",
-    "version": "1.0.0",
+    "version": "1.6.0",
     "description": "NextAI - Obsidian Plugin",
     "main": "main.js",
     "scripts": {
